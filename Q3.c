@@ -8,7 +8,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<math.h>
-#include <stdbool.h>
+#include<stdbool.h>
 /************* GLOBAL VARIABLES ************/
 // state global variable if any
 /******** FUNCTIONS (DECLARE/DEFINE) *********/
@@ -16,25 +16,24 @@
 //{ struct with bit-field (choose width length)
 //type [member_name] : width
 //.tag name;
-
-// bool isEven(int number); redundant?
-
-bool isEven(int number){
-    if(number % 2 == 0){
-        return true;
-        }else{
-                return false;
-            };
-}
 /************* MAIN FUNCTION**************/
-int main(){
- int number;
- printf("Please input a number to check if it is odd or even :");
- scanf("%d",&number);
-    if(isEven(number)==true){
-        printf("The number is even\n");
-    }  else   {
-        printf("The number is not even\n");
+int useFibonacci(int n){
+        
+    if(n<=1){
+        return n;
     }
+        return useFibonacci(n-1) + useFibonacci(n-2);
+}
+
+int main(){
+    int number;
+        printf("please input your number to perform Fibonacci operation to : ");
+        scanf("%d",&number);
  
+        printf("The Fibonacci series for %d is : ", number);
+        
+            for(int i=0;number>i;i++){
+                printf("%d, ",useFibonacci(i));
+            }
+        printf("\n");
 return 0;}

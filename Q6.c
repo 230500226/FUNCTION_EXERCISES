@@ -8,7 +8,6 @@
 #include<stdlib.h>
 #include<string.h>
 #include<math.h>
-#include <stdbool.h>
 /************* GLOBAL VARIABLES ************/
 // state global variable if any
 /******** FUNCTIONS (DECLARE/DEFINE) *********/
@@ -16,25 +15,18 @@
 //{ struct with bit-field (choose width length)
 //type [member_name] : width
 //.tag name;
-
-// bool isEven(int number); redundant?
-
-bool isEven(int number){
-    if(number % 2 == 0){
-        return true;
-        }else{
-                return false;
-            };
-}
 /************* MAIN FUNCTION**************/
+int radius;
+
+void useCircle(int radius){
+    int diameter = radius * 2;
+    int circumference = 2 * 3.14 * radius;
+    int area = 3.14 * pow(radius,2);
+        printf("The circle with the radius of %d has a diameter of %d, a circumference of %d and a area of %d \n", radius, diameter, circumference, area);
+}
+
 int main(){
- int number;
- printf("Please input a number to check if it is odd or even :");
- scanf("%d",&number);
-    if(isEven(number)==true){
-        printf("The number is even\n");
-    }  else   {
-        printf("The number is not even\n");
-    }
- 
+ printf("Please input the radius of the circle : ");
+ scanf("%d", &radius);
+ useCircle(radius);
 return 0;}

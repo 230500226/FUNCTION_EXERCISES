@@ -8,7 +8,6 @@
 #include<stdlib.h>
 #include<string.h>
 #include<math.h>
-#include <stdbool.h>
 /************* GLOBAL VARIABLES ************/
 // state global variable if any
 /******** FUNCTIONS (DECLARE/DEFINE) *********/
@@ -16,25 +15,23 @@
 //{ struct with bit-field (choose width length)
 //type [member_name] : width
 //.tag name;
-
-// bool isEven(int number); redundant?
-
-bool isEven(int number){
-    if(number % 2 == 0){
-        return true;
-        }else{
-                return false;
-            };
-}
 /************* MAIN FUNCTION**************/
+int useFactorial(int number){
+    int output = 1;
+        if (number>=0){
+            for (int i=1; i<=number ; i++){
+                output = output * i;
+                //output *= i;
+            }
+        };
+    return output;
+}
+
 int main(){
- int number;
- printf("Please input a number to check if it is odd or even :");
- scanf("%d",&number);
-    if(isEven(number)==true){
-        printf("The number is even\n");
-    }  else   {
-        printf("The number is not even\n");
-    }
+    int number;
+        printf("please input your number to perform factorial operation to : ");
+        scanf("%d",&number);
  
+            printf("%d! is %d\n", number, useFactorial(number));
+    
 return 0;}
